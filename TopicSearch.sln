@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TopicSearch", "TopicSearch\TopicSearch.csproj", "{CB38F7F4-B7A3-4511-A561-8568FEFA7054}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{177733CE-72B3-4C15-9237-ED8750A0AA59}"
+	ProjectSection(SolutionItems) = preProject
+		.dockerignore = .dockerignore
+		.gitignore = .gitignore
+		docker-compose.yml = docker-compose.yml
+		Dockerfile = Dockerfile
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CB38F7F4-B7A3-4511-A561-8568FEFA7054}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB38F7F4-B7A3-4511-A561-8568FEFA7054}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB38F7F4-B7A3-4511-A561-8568FEFA7054}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB38F7F4-B7A3-4511-A561-8568FEFA7054}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D5070A94-C645-4225-8833-43CDF1863BA3}
+	EndGlobalSection
+EndGlobal
