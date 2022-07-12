@@ -19,8 +19,4 @@ RUN dotnet publish "TopicSearch.csproj" -c Release -o /app/publish
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-
-ENV ASPNETCORE_URLS http://*:5000
-ENV ASPNETCORE_ENVIRONMENT docker
-EXPOSE 5000
 ENTRYPOINT ["dotnet", "TopicSearch.dll"]

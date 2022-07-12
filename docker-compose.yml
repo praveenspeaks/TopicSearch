@@ -5,12 +5,11 @@ services:
     container_name: TopicSearch
     restart: always
     build:
-      context: ./
-      dockerfile: ./Dockerfile
+      context: ./     
     ports:
       - 5000:80
     networks:
-    - pk-network  
+      - pk-network  
     links:
       - elasticsearch
 
@@ -31,4 +30,4 @@ services:
 
 networks:
   pk-network:
-   driver: bridge
+    driver: bridge
