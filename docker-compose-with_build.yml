@@ -3,8 +3,9 @@ version: "3.1"
 services:
   api:
     container_name: topicsearch
-    image: aryajasdev/topicsearch:v1
     restart: always
+    build:
+      context: ./
     ports:
       - 49162:80
     networks:
