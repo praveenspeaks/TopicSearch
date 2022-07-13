@@ -2,28 +2,29 @@ version: "3.1"
 
 services:
   api:
-    container_name: TopicSearch
+    container_name: topicsearch
     restart: always
     build:
-      context: ./     
+      context: ./
     ports:
-      - 5000:80
+      - 49162:80
     networks:
-      - pk-network  
-    links:
+      - pk-network
+    depends_on:
       - elasticsearch
 
   elasticsearch:
     container_name: elasticsearch
     image: docker.elastic.co/elasticsearch/elasticsearch:8.2.0
+    restart: always
     ports:
       - 49161:9200
+      - 49160:9300
     networks:
       - pk-network
     environment:
+      - cluster.name=docker-cluster
       - xpack.security.enabled=false
-      - xpack.watcher.enabled=false
-      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
       - discovery.type=single-node
       - ELASTIC_USERNAME=elastic
       - ELASTIC_PASSWORD=tpicap123

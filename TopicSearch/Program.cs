@@ -1,4 +1,5 @@
 using Elasticsearch.Net;
+using Microsoft.OpenApi.Models;
 using Nest;
 using Nest.JsonNetSerializer;
 using TopicSearch;
@@ -20,11 +21,8 @@ builder.Services.AddSingleton(client);
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 
