@@ -16,7 +16,7 @@ spec:
         app: topic-search
     spec:
       containers:
-      - image: aryajasdev/topicsearch:v1
+      - image: aryajasdev/topicsearch:v2
         name: topic-search
         ports:
           - containerPort: 80
