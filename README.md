@@ -34,3 +34,6 @@ kubectl apply -f deployment.yaml
 ## Bash
 
 kubectl exec -it [pod-name] -- bash
+
+creating cluster onto aws account
+$ eksctl create cluster --name pnc-cluster --region eu-west-2 --nodegroup-name linux-nodes --node-type t2.micro --nodes 1

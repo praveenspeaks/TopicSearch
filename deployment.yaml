@@ -64,7 +64,7 @@ spec:
           - containerPort: 9200
         env:
         - name: cluster.name
-          value: docker-cluster
+          value: pncs-cluster
         - name: xpack.security.enabled
           value: 'false'
         - name: discovery.type
@@ -92,4 +92,3 @@ spec:
 status:
   loadBalancer: {}
 ---
-
