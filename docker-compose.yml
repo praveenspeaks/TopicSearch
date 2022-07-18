@@ -25,8 +25,8 @@ services:
       - cluster.name=docker-cluster
       - xpack.security.enabled=false
       - discovery.type=single-node
-      - ELASTIC_USERNAME=elastic
-      - ELASTIC_PASSWORD=tpicap123
+      - ELASTIC_USERNAME=[userId]
+      - ELASTIC_PASSWORD=[password]
 
 networks:
   pk-network:
