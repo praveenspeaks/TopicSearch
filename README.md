@@ -46,6 +46,7 @@ to run below command first you have to install eksctl application
 choco install eksctl
 
 command to create new cluster with nodegroup and ec2 instance
+
 eksctl create cluster --name [Cluster-Name] --region [RegionName] --nodegroup-name [NodeName: anyname you like] --node-type t3.micro --nodes 2
 
 ## update kube config to run kube commands
@@ -59,14 +60,18 @@ eksctl get cluster -- will show list of clusters on your aws account
 to create kube deployment file below command will generate yaml content which can be copied to yaml file for deployment
 
 kubectl create deployment topic-search --image aryajasdev/topicsearch:v1 --dry-run=client --output yaml
+
 kubectl create deployment elasticsearch --image docker.elastic.co/elasticsearch/elasticsearch:8.2.0  --dry-run=client --output yaml
 
 ## expose a deployment (defaults to type cluster ip)
+
 kubectl expose deployment topic-search --port 80 --target-port 80 --type Loadbalancer --dry-run client --output yaml
+
 kubectl expose deployment elasticsearch --port 9200 --target-port 9200 --type ClusterIp --dry-run client --output yaml
 
 # Deploy
 once above cluster will be created on your AWS Account run below command to depoy your containers to K8s
+
 kubectl apply -f deployment.yaml
 
 ## Bash to access POD
