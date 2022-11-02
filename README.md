@@ -37,7 +37,8 @@ we can run API : http://localhost:49162
 Elastic Search : http://localhost:49161
 
 # Creating cluster onto aws account
-to run below command first you have to install eksctl application from https://community.chocolatey.org/packages/eksctl, it will install kubectl as well
+to run below command first you have to install eksctl application
+choco install eksctl
 
 command to create new cluster with nodegroup and ec2 instance
 eksctl create cluster --name [Cluster-Name] --region [RegionName] --nodegroup-name [NodeName: anyname you like] --node-type t3.micro --nodes 2
