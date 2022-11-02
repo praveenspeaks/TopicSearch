@@ -9,6 +9,7 @@ This application is just a learning to integrate elastic search with .net Core 6
 aws configure - to configure your account 
 
 check configuration 
+
   aws sts get-caller-identity
   
   if there is error then hack to fix the configuration issue
