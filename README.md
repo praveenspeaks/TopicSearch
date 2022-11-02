@@ -25,7 +25,7 @@ check configuration
 
 # Docker Commands
 
-There is 2 docker compose file created to run this application, first is to run with the lready created image and pushed to docker hub
+There is 2 docker compose file created to run this application, first is to run with the already created image and pushed to docker hub
 
 docker-compose up -da
 
