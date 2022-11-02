@@ -2,23 +2,27 @@
 Learning .NET core API with elastic search deployment on docker and Kubernetes
 Orchestration of multiple services from one deployment with network bridge
 
-#Prerequisite
+# Prerequisite
 This application is just a learning to integrate elastic search with .net Core 6.0 and building an API to store Topic Data and User Data. You need to have docker or podmon installed in your computer as linux containers.
 
-#AWS commands
+# AWS commands
 aws configure - to configure your account 
 
 check configuration 
   aws sts get-caller-identity
   
   if there is error then hack to fix the configuration issue
+  
   unset AWS_SECRET_ACCESS_KEY
+  
   unset AWS_SECRET_KEY
 
   export AWS_ACCESS_KEY_ID=[access-key-aws-account]
+  
   export AWS_SECRET_ACCESS_KEY=[secret-aws-account]
 
-#Docker Commands
+
+# Docker Commands
 
 There is 2 docker compose file created to run this application, first is to run with the lready created image and pushed to docker hub
 docker-compose up -da
