@@ -2,9 +2,21 @@
 Learning .NET core API with elastic search deployment on docker and Kubernetes
 Orchestration of multiple services from one deployment with network bridge
 
-
 #Prerequisite
 This application is just a learning to integrate elastic search with .net Core 6.0 and building an API to store Topic Data and User Data. You need to have docker or podmon installed in your computer as linux containers.
+
+#AWS commands
+aws configure - to configure your account 
+
+check configuration 
+  aws sts get-caller-identity
+  
+  if there is error then hack to fix the configuration issue
+  unset AWS_SECRET_ACCESS_KEY
+  unset AWS_SECRET_KEY
+
+  export AWS_ACCESS_KEY_ID=[access-key-aws-account]
+  export AWS_SECRET_ACCESS_KEY=[secret-aws-account]
 
 #Docker Commands
 
@@ -21,10 +33,16 @@ we can run API : http://localhost:49162
 Elastic Search : http://localhost:49161
 
 # Creating cluster onto aws account
-to run below command first you have to install eksctl application 
-from https://community.chocolatey.org/packages/eksctl, it will install kubectl as well
+to run below command first you have to install eksctl application from https://community.chocolatey.org/packages/eksctl, it will install kubectl as well
 
+command to create new cluster with nodegroup and ec2 instance
 eksctl create cluster --name [Cluster-Name] --region [RegionName] --nodegroup-name [NodeName: anyname you like] --node-type t3.micro --nodes 2
+
+## update kube config to run kube commands
+aws eks --region [region-name] update-kubeconfig --name [cluster-name]
+
+check c:/users/[username]/.kube/config to verify the configuration, if all ok then run
+eksctl get cluster -- will show list of clusters on your aws account
 
 # Kubes commands
 to create kube deployment file below command will generate yaml content which can be copied to yaml file for deployment
@@ -48,6 +66,16 @@ kubectl get pods
 
 ## check the servics
 kubectl get svc
+this will give you load balancer and dns to check the url
 
-##check the deployments
+## check the deployments
 kubectl get deployments
+
+## delete the deployment
+kubectl delete deployment deployment-name
+
+## check everything
+kubectl get all
+
+## check pod configuration
+kubectl describe [pod-name]
