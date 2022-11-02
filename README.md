@@ -20,7 +20,11 @@ once this is deployed on docker
 we can run API : http://localhost:49162
 Elastic Search : http://localhost:49161
 
+# Creating cluster onto aws account
+to run below command first you have to install eksctl application 
+from https://community.chocolatey.org/packages/eksctl, it will install kubectl as well
 
+eksctl create cluster --name [Cluster-Name] --region [RegionName] --nodegroup-name [NodeName: anyname you like] --node-type t3.micro --nodes 2
 
 # Kubes commands
 to create kube deployment file below command will generate yaml content which can be copied to yaml file for deployment
@@ -31,12 +35,6 @@ kubectl create deployment elasticsearch --image docker.elastic.co/elasticsearch/
 ## expose a deployment (defaults to type cluster ip)
 kubectl expose deployment topic-search --port 80 --target-port 80 --type Loadbalancer --dry-run client --output yaml
 kubectl expose deployment elasticsearch --port 9200 --target-port 9200 --type ClusterIp --dry-run client --output yaml
-
-#Creating cluster onto aws account
-to run below command first you have to install eksctl application 
-from https://community.chocolatey.org/packages/eksctl, it will install kubectl as well
-
-$ eksctl create cluster --name [Cluster-Name] --region [RegionName] --nodegroup-name [NodeName: anyname you like] --node-type t3.micro --nodes 2
 
 # Deploy
 once above cluster will be created on your AWS Account run below command to depoy your containers to K8s
