@@ -25,15 +25,19 @@ check configuration
 # Docker Commands
 
 There is 2 docker compose file created to run this application, first is to run with the lready created image and pushed to docker hub
+
 docker-compose up -da
 
 Note : to build image use : docker build -t [repoName]:[tagname] .
 
 To run this application directly from the code to generate fresh image, rename "docker-compose-with_build.yml" file run below command
+
 docker-compose up -d --build
 
 once this is deployed on docker 
+
 we can run API : http://localhost:49162
+
 Elastic Search : http://localhost:49161
 
 # Creating cluster onto aws account
@@ -48,6 +52,7 @@ eksctl create cluster --name [Cluster-Name] --region [RegionName] --nodegroup-na
 aws eks --region [region-name] update-kubeconfig --name [cluster-name]
 
 check c:/users/[username]/.kube/config to verify the configuration, if all ok then run
+
 eksctl get cluster -- will show list of clusters on your aws account
 
 # Kubes commands
